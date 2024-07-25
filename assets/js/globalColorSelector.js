@@ -2,9 +2,6 @@ jQuery(document).ready(function($) {
 
     $('#showColorsBtn').on('click', function() {
         $('#colorPalette').slideToggle(200);
-
-        $('#showColorsBtn').innerHTML = '⬇️ Color'
-
         $('#showColorsBtn i').toggleClass("arrowDown");
     });
 
