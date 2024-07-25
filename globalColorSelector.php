@@ -1,34 +1,53 @@
-<?php // phpcs:ignore
+<?php
 /**
- * Plugin Name: Global color changer for Elementor
- * Plugin URI: https://belaweb.net
- * Description: Let visitor select colors to change website client-side colors
- * Version: 0.1.0
- * Author: Belaweb
- * Author URI: https://belaweb.net
- * Text Domain: global-color-selector
- * Domain Path: /plugins
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * GitHub Plugin URI: 
- * GitHub Branch:     master
- * Requires WP:       6.4.2
- * Requires PHP:      7.4
- * Tested up to: 6.4.2
+ * Plugin Name:         Global color changer for Elementor
+ * Plugin URI:          https://belaweb.net
+ * Description:         Let visitor select colors to change website client-side colors.
+ * Version:             0.2.1
+ * Author:              Belaweb
+ * Author URI:          https://belaweb.net
+ * Text Domain:         global-color-selector
+ * Domain Path:         /plugins
+ * License:             GPL-2.0+
+ * License URI:         http://www.gnu.org/licenses/gpl-2.0.txt
+ * GitHub Plugin URI:   https://github.com/stv-beep/Global-color-changer-for-Elementor-Plugin
+ * GitHub Branch:       master
+ * Requires WP:         6.4.2
+ * Requires PHP:        7.4
+ * Tested up to:        6.4.2
  *
- * @link      https://belaweb.net
- * @author    Belaweb
- * @license   GPL-2.0+
- * @package   Global_Color_Selector
+ * @link                https://belaweb.net
+ * @author              Belaweb
+ * @license             GPL-2.0+
+ * @package             Global_Color_Selector
  *
  */
- 
+
+
+// Exit if accessed directly.
+defined('ABSPATH') or exit;
+
+define('HIDE_ADMIN_NOTICES_URL', plugin_dir_url(__FILE__));
+
+
 add_action('wp_footer', 'mfp_Add_Selector');
+
+function enqueue_custom_scripts() { 
+    wp_enqueue_script('custom-script', plugin_dir_url( __FILE__ ) . 'assets/js/globalColorSelector.js', array('jquery'), '1.0', true); 
+} 
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+function enqueue_custom_styles() { 
+    wp_enqueue_style('custom-style', plugin_dir_url( __FILE__ ) . 'assets/css/globalColorSelector.css'); 
+} 
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles'); 
+
+
  
 function mfp_Add_Selector() {
     echo "<section id='dropdownCont'>
 
-    <button id='showColorsBtn'>⬆️ Color</button>
+    <button id='showColorsBtn'><i class='arrowUp'></i> Global Color</button>
 
     <div id='colorPalette'>
         <div>
@@ -69,100 +88,5 @@ function mfp_Add_Selector() {
         </div>
     </div>
 </section>
-
-
-<script>
-    jQuery(document).ready(function($) {
-
-        $('#showColorsBtn').on('click', function() {
-            $('#colorPalette').slideToggle(200);
-        });
-
-        function changeColors(global, color) {
-
-            if (global == 'primary') {
-                $('.elementor-kit-8').css('--e-global-color-primary', color);
-            } else if (global == 'secondary') {
-                $('.elementor-kit-8').css('--e-global-color-secondary', color);
-            }
-        }
-
-        $('.colorBtn2').on('click', function() {
-            var color = $(this).data('color'); // Puedes ajustar según sea necesario
-
-            changeColors('secondary', color);
-        });
-
-
-        $('.colorBtn').on('click', function() {
-            var color = $(this).data('color');
-
-            changeColors('primary', color);
-        });
-    });
-</script>
-
-<style>
-
-    #dropdownCont {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 1000;
-    }
-
-    @media (max-width:768px) {
-        #dropdownCont {
-            bottom: 76px;
-            left: 1%;
-        }
-    }
-    
-    #colorPalette {
-        display: none;
-        background-color: #fff;
-        padding: 2px 7px 0px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        /*transition: height 0.3s ease-in-out;*/
-    }
-
-    #colorPalette > div {
-        flex-direction: column;
-        background-color: #fff;
-        padding: 2px 7px 0px;
-        border-radius: 5px;
-        gap:2px;
-    }
-
-    .colorBtn, .colorBtn2 {
-        width: 20px;
-        height: 20px;
-        border: none;
-        cursor: pointer;
-        padding:0px;
-    }
-    @media (max-width:981px) {
-        .colorBtn, .colorBtn2 {
-            width: 17.2px;
-            height: 17.2px;
-        }
-    }
-
-    
-
-    #showColorsBtn {
-        background-color: #11A900;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        padding: 1px 6px;
-    }
-    #showColorsBtn:hover {
-        background-color: #2BBF1A;
-    }
-</style>
-
-    ";
+";
 }
