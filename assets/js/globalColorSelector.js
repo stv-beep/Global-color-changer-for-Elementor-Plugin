@@ -8,9 +8,9 @@ jQuery(document).ready(function($) {
     function changeColors(global, color) {
 
         if (global == 'primary') {
-            $('.elementor-kit-8').css('--e-global-color-primary', color);
+            $("[class^='.elementor-kit-']").css('--e-global-color-primary', color);
         } else if (global == 'secondary') {
-            $('.elementor-kit-8').css('--e-global-color-secondary', color);
+            $("[class^='.elementor-kit-']").css('--e-global-color-secondary', color);
         }
     }
 
