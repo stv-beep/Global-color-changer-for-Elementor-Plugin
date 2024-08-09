@@ -1,13 +1,13 @@
 # Global color changer for Elementor Plugin
 
-### Let visitor select colors to change website client-side colors for a color palette demo.
+### Let visitor select colors to change website client-side colors for a color palette demo
 
 - Select the primary and secondary color
   
-![](/imgs/main.png)
+![Main UI](https://i.imgur.com/19DQZKW.png)
 
 - See the changes
 
-![](/imgs/example1.png)
+![Example1](https://i.imgur.com/WesAaxS.png)
 
-![](/imgs/example2.png)
+![Example2](https://i.imgur.com/pm1ioAb.png)
