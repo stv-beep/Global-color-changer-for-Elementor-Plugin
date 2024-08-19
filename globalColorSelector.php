@@ -3,7 +3,7 @@
  * Plugin Name:         Global color changer for Elementor
  * Plugin URI:          https://belaweb.net
  * Description:         Let visitor select colors to change website client-side colors.
- * Version:             0.2.2
+ * Version:             0.2.3
  * Author:              Belaweb
  * Author URI:          https://belaweb.net
  * Text Domain:         global-color-selector
