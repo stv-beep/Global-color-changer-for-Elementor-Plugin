@@ -3,7 +3,7 @@
  * Plugin Name:         Global color changer for Elementor
  * Plugin URI:          https://belaweb.net
  * Description:         Let visitor select colors to change website client-side colors.
- * Version:             0.2.3
+ * Version:             0.3.1
  * Author:              Belaweb
  * Author URI:          https://belaweb.net
  * Text Domain:         global-color-selector
@@ -46,7 +46,7 @@ function enqueue_custom_styles() {
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles'); 
 
 
- 
+
 function mfp_Add_Selector() {
     echo "<section id='dropdownCont'>
 
@@ -67,7 +67,8 @@ function mfp_Add_Selector() {
                 <button class='colorBtn' data-color='#dad7cd' style='background:#dad7cd;'></button>
                 <button class='colorBtn' data-color='#e1bb80' style='background:#e1bb80;'></button>
                 <button class='colorBtn' data-color='#EE5780' style='background:#EE5780;'></button>
-
+                <input type='color' id='customPrimaryColor' />
+                <label for='customPrimaryColor'>Custom</label>
 
             </div>
 
@@ -84,7 +85,8 @@ function mfp_Add_Selector() {
                 <button class='colorBtn2' data-color='#588157' style='background:#588157;'></button>
                 <button class='colorBtn2' data-color='#352208' style='background:#352208;'></button>
                 <button class='colorBtn2' data-color='#006C8C' style='background:#006C8C;'></button>
-
+                <input type='color' id='customSecondaryColor'/>
+                <label for='customSecondaryColor'>Custom</label>
 
             </div>
             
