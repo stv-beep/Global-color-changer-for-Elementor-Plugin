@@ -1,6 +1,6 @@
 # Global color changer for Elementor Plugin
 
-### Let visitor select colors to change website client-side colors for a color palette demo
+### Allows the visitor to select colors to change to Elementor global colors from the client side
 
 - Select the primary and secondary color
   
