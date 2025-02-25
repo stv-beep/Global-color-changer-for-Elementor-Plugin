@@ -1,28 +1,28 @@
 <?php
 /**
  * Plugin Name:         Global color changer for Elementor
- * Plugin URI:          https://belaweb.net
+ * Plugin URI:          https://github.com/stv-beep/Global-color-changer-for-Elementor-Plugin
  * Description:         Let visitor select colors to change website client-side colors.
  * Version:             0.3.1
- * Author:              Belaweb
- * Author URI:          https://belaweb.net
+ * Author:              Aleix Algueró
+ * Author URI:          https://aleixalguero.vercel.app
  * Text Domain:         global-color-selector
  * Domain Path:         /languages
  * License:             GPL-2.0+
  * License URI:         http://www.gnu.org/licenses/gpl-2.0.txt
  * GitHub Plugin URI:   https://github.com/stv-beep/Global-color-changer-for-Elementor-Plugin
  * GitHub Branch:       master
- * Tested up to: 6.6.2
+ * Tested up to: 6.7.2
  * Requires at least: 6.3
  * PHP tested up to: 8.3
  * Requires PHP: 7.4
  * Requires Plugins: elementor
- * Elementor tested up to: 3.24.6
+ * Elementor tested up to: 3.27.6
  * Elementor Pro tested up to: 3.21.3
  * 
  *
- * @link                https://belaweb.net
- * @author              Belaweb
+ * @link                https://github.com/stv-beep/Global-color-changer-for-Elementor-Plugin
+ * @author              Aleix Algueró
  * @license             GPL-2.0+
  * @package             Global_Color_Selector
  *
